@@ -30,8 +30,8 @@ const setWeatherData = (data) => {
   temperatureElement.textContent =
     eval((data.main.temp - 273.15).toFixed(2)) + "°C";
   precipitationElement.textContent = data.rain
-    ? eval((data.rain["1h"] * 100).toFixed(2)) + "%"
-    : "0%";
+    ? (data.rain["1h"]) + "mm"
+    : "0mm";
   windElement.innerHTML = data.wind.speed + "m/s";
   icon.innerHTML = `<img src=${
     "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@4x.png"
